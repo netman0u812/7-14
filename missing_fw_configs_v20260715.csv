@@ -1,0 +1,298 @@
+#STEM=missing_fw_configs
+#VERSION=v20260715
+#SOURCE=fw-inv-3-26.csv (748 devices) cross-referenced against fw_config_manifest_v20260715.csv (940 files / 703-device estate)
+#ROWS=292
+#NOTE=Matching is hostname-based (exact + substring, domain-suffix stripped). Devices with blank hostname in inventory were skipped, not counted as missing.
+hostname,ip,vendor,model,tenant,category,status,decommission_status,manager,gap_reason
+aln-fw-westcorp-a,10.108.188.11,checkpoint,5000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+aln-fw-westcorp-b,10.108.188.12,checkpoint,5000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+btn-fw-walmart-a,10.106.244.21,checkpoint,3000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+btn-fw-walmart-b,10.106.244.22,checkpoint,3000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+cae-fw-emrqacloud-a,10.208.194.211,checkpoint,Other,HCB,Virtual,communicating,2025,domain_grp3,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+cae-fw-emrqacloud-b,10.208.194.212,checkpoint,Other,HCB,Virtual,communicating,2025,domain_grp3,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+cae-fw-qasvc1c-a,10.208.211.11,checkpoint,Other,HCB,Virtual,communicating,2025,domain_grp3,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+cae-fw-qasvc1c-b,10.208.211.12,checkpoint,Other,HCB,Virtual,communicating,2025,domain_grp3,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+cmc-fw-hubprodglr-a,10.159.5.5,checkpoint,Other,HCB,Virtual,communicating,2026,domain_grp3,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+cmc-fw-hubprodglr-b,10.159.5.6,checkpoint,Other,HCB,Virtual,communicating,2026,domain_grp3,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+cme-fw-hubnonprod-a,10.159.69.5,checkpoint,Other,HCB,Virtual,communicating,2026,domain_grp3,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+cme-fw-hubnonprod-b,10.159.69.6,checkpoint,Other,HCB,Virtual,communicating,2026,domain_grp3,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+cme-fw-hubprodglr-a,10.159.101.5,checkpoint,Other,HCB,Virtual,communicating,2025,domain_grp3,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+cme-fw-hubprodglr-b,10.159.101.6,checkpoint,Other,HCB,Virtual,communicating,2025,domain_grp3,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+dvr-fw-westcorp-a,10.108.192.11,checkpoint,5000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+dvr-fw-westcorp-b,10.108.192.12,checkpoint,5000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+hbg-fw-stofpenn-a,10.108.80.14,checkpoint,3000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+hbg-fw-stofpenn-b,10.108.80.15,checkpoint,3000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+lsn-fw-hgs-a,10.108.200.9,checkpoint,5000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+lsn-fw-hgs-b,10.108.200.10,checkpoint,5000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+mid-fw-services-a,206.213.199.112,checkpoint,23000 Appliances,HCB,Physical,communicating,,domain_grp1,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+mid-fw-services-b,206.213.199.113,checkpoint,23000 Appliances,HCB,Physical,communicating,,domain_grp1,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+mna-fw-concentrix2-a,10.106.220.12,checkpoint,15000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+mna-fw-concentrix2-c,10.106.220.14,checkpoint,15000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+muc-fw-hgs-a,10.108.176.15,checkpoint,5000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+muc-fw-hgs-b,10.108.176.16,checkpoint,5000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+qny-fw-hgs-a,10.108.236.12,checkpoint,5000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+qny-fw-hgs-b,10.108.236.13,checkpoint,5000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+qzc-fw-concentrix2-a,10.108.36.6,checkpoint,15000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+qzc-fw-concentrix2-b,10.108.36.7,checkpoint,15000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+qzn-fw-accenture-a,10.108.244.11,checkpoint,5000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+qzn-fw-accenture-b,10.108.244.12,checkpoint,5000 Appliances,HCB,Physical,communicating,2026,domain_grp2,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+win-fw-services-a,206.213.199.212,checkpoint,23000 Appliances,HCB,Physical,communicating,,domain_grp1,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+win-fw-services-b,206.213.199.213,checkpoint,23000 Appliances,HCB,Physical,communicating,,domain_grp1,CHECKPOINT — config not collected (some Checkpoint devices ARE collected; this one is not)
+azhtrust01-vmss_11,10.223.128.15,cisco,Cisco Firepower Threat Defense for Azure,High_Trust,Physical,,,rricmdcsecfmcnonprod-01.cvshealth.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhtrust01-vmss_12,10.223.128.16,cisco,Cisco Firepower Threat Defense for Azure,High_Trust,Physical,,,rricmdcsecfmcnonprod-01.cvshealth.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhtrust01-vmss_13,10.223.128.17,cisco,Cisco Firepower Threat Defense for Azure,High_Trust,Physical,,,rricmdcsecfmcnonprod-01.cvshealth.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhtrust01-vmss_14,10.223.128.18,cisco,Cisco Firepower Threat Defense for Azure,High_Trust,Physical,,,rricmdcsecfmcnonprod-01.cvshealth.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhtrust02-vmss_14,10.223.192.13,cisco,Cisco Firepower Threat Defense for Azure,High_Trust,Physical,,,rricmdcsecfmcnonprod-01.cvshealth.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhtrust02-vmss_15,10.223.192.14,cisco,Cisco Firepower Threat Defense for Azure,High_Trust,Physical,,,rricmdcsecfmcnonprod-01.cvshealth.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhtrust02-vmss_16,10.223.192.15,cisco,Cisco Firepower Threat Defense for Azure,High_Trust,Physical,,,rricmdcsecfmcnonprod-01.cvshealth.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhtrust02-vmss_17,10.223.192.16,cisco,Cisco Firepower Threat Defense for Azure,High_Trust,Physical,,,rricmdcsecfmcnonprod-01.cvshealth.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub000-vmss_10,10.155.44.12,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub000-vmss_7,10.155.44.9,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub000-vmss_8,10.155.44.10,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub000-vmss_9,10.155.44.11,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub001-vmss_10,10.155.44.8,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub001-vmss_6,10.155.44.4,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub001-vmss_8,10.155.44.6,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub001-vmss_9,10.155.44.7,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub002-vmss_12,10.155.172.8,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub002-vmss_14,10.155.172.15,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub002-vmss_15,10.155.172.17,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub002-vmss_16,10.155.172.13,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub003-vmss_5,10.155.172.14,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub003-vmss_6,10.155.172.16,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub003-vmss_7,10.155.172.7,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,FALSE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub003-vmss_8,10.155.172.9,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub012-ingress-usc-vmss_3,10.229.134.68,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,FALSE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub012-ingress-usc-vmss_4,10.229.134.70,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,FALSE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub012-ingress-usc-vmss_5,10.229.134.72,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub012-ingress-usc-vmss_6,10.229.134.74,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,FALSE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub013-egress-usc-vmss_0,10.229.134.196,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub013-egress-usc-vmss_1,10.229.134.198,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub013-egress-usc-vmss_2,10.229.134.200,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub013-egress-usc-vmss_3,10.229.134.202,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub014-ingress-use2-vmss_10,10.229.6.74,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub014-ingress-use2-vmss_7,10.229.6.68,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,FALSE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub014-ingress-use2-vmss_8,10.229.6.70,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub014-ingress-use2-vmss_9,10.229.6.72,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub015-egress-use2-vmss_0,10.229.6.196,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub015-egress-use2-vmss_1,10.229.6.198,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,FALSE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub015-egress-use2-vmss_2,10.229.6.200,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+azhub015-egress-use2-vmss_3,10.229.6.202,cisco,Cisco Firepower Threat Defense for Azure,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-DR-shubegress-ftd-01,10.174.147.141,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-DR-shubegress-ftd-02,10.174.147.145,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-DR-shubegress-ftd-03,10.174.147.21,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-DR-shubegress-ftd-04,10.174.147.25,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-DR-shubingress-ftd-01,10.174.128.141,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-DR-shubingress-ftd-02,10.174.128.145,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-DR-shubingress-ftd-03,10.174.128.21,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-DR-shubingress-ftd-04,10.174.128.25,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-shubegress-ftd-01,10.174.16.4,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-shubegress-ftd-02,10.174.16.7,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-shubegress-ftd-03,10.174.16.132,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-shubegress-ftd-04,10.174.16.135,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-shubingress-ftd-01,10.174.0.4,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-shubingress-ftd-02,10.174.0.7,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-shubingress-ftd-03,10.174.0.132,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+eclawseast-shubingress-ftd-04,10.174.0.135,cisco,Cisco Firepower Threat Defense for AWS,PCI Cloud,Virtual,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-pci-ftd-01-vm,10.117.68.10,cisco,Cisco Firepower Threat Defense for GCP,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-teraprod-ftd-01,10.73.64.39,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-teraprod-ftd-02,10.73.64.40,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-teraprod-ftd-03,10.73.64.45,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-ztna-nonprod-01,10.143.67.98,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-ztna-nonprod-02,10.143.67.99,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-ztna-nonprod-03,10.143.67.100,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-ztna-nonprod-04,10.143.67.101,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-ztna-nonprod-05,10.143.67.102,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-ztna-nonprod-06,10.143.67.103,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-ztna-prod-01,10.158.21.233,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-ztna-prod-02,10.158.21.236,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-ztna-prod-03,10.158.21.229,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-ztna-prod-04,10.158.21.230,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-ztna-prod-05,10.158.21.231,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-use4-ztna-prod-06,10.158.21.232,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-pci-ftd-01-vm,10.117.100.12,cisco,Cisco Firepower Threat Defense for GCP,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-teraprod-ftd-01,10.73.65.34,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-teraprod-ftd-02,10.73.65.41,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-teraprod-ftd-03,10.73.65.35,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-ztna-nonprod-01,10.143.67.168,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-ztna-nonprod-02,10.143.67.169,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-ztna-nonprod-03,10.143.67.170,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-ztna-nonprod-04,10.143.67.171,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-ztna-nonprod-05,10.143.67.172,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-ztna-nonprod-06,10.143.67.167,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-ztna-prod-01,10.158.21.164,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-ztna-prod-02,10.158.21.165,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-ztna-prod-03,10.158.21.166,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-ztna-prod-04,10.158.21.167,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-ztna-prod-05,10.158.21.168,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egc-usw2-ztna-prod-06,10.158.21.170,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egcuse4sechubnonprodftd-01,10.236.246.12,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egcuse4sechubnonprodftd-02,10.236.246.13,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egcuse4sechubnonprodftd-03,10.236.246.5,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egcuse4sechubnonprodftd-04,10.236.246.11,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egcuse4sechubprodftd-vpn-vm,10.236.251.248,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egcusw2sechubnonprodftd-01,10.236.246.49,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egcusw2sechubnonprodftd-02,10.236.246.48,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egcusw2sechubnonprodftd-03,10.236.246.50,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egcusw2sechubnonprodftd-04,10.236.246.47,cisco,Cisco Firepower Threat Defense for GCP,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+egcusw2sechubprodftd-vpn-vm,10.236.251.208,cisco,Cisco Firepower Threat Defense for GCP,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+fmc_lab_AZ1_FTD_EASTWEST_1,10.173.17.4:443,cisco,Cisco Firepower Threat Defense for AWS,PBM,Physical,UNKNOWN,,cdo,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+fmc_lab_AZ1_FTD_Peering_1,10.173.15.4:443,cisco,Cisco Firepower Threat Defense for AWS,PBM,Physical,UNKNOWN,,cdo,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+fmc_lab_AZ2_FTD_Egress_2,10.173.13.21:443,cisco,Cisco Firepower Threat Defense for AWS,PBM,Physical,UNKNOWN,,cdo,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+fmc_lab_AZ2_FTD_Ingress_1,10.173.11.53:443,cisco,Cisco Firepower Threat Defense for AWS,PBM,Physical,UNKNOWN,,cdo,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+fmc_lab_AZ2_FTD_Peering_1,10.173.15.20:443,cisco,Cisco Firepower Threat Defense for AWS,PBM,Physical,UNKNOWN,,cdo,CLOUD-FTD (GCP/Azure/AWS) — likely outside on-prem config-collection pipeline scope
+CBN-SEC-T1B-APS-01,10.26.193.5:443,cisco,ASA5555 (V05),Retail,Physical,ONLINE,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+CBN-SEC-T1B-APS-02,10.26.193.5:443,cisco,ASA5555 (V05),Retail,Physical,Primary - Failed,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+EDA-SEC-M1A-MAT-01-FO,10.37.255.11,Cisco,ASA5555,CVS,Physical,,,Unmanaged,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+HOL-SEC-M1A-PCI-01,10.38.64.236:443,cisco,ASA5555 (V04),PBM,Physical,ONLINE,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+HOL-SEC-M1A-PCI-02,10.38.64.236:443,cisco,ASA5555 (V04),PBM,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+KNV-SEC-M1A-WMS-02,10.193.33.10:443,cisco,ASA5516 (V05),Retail,Physical,Secondary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+LVG-SEC-M1A-PCI-01,10.182.27.221:443,cisco,ASA5555 (V05),PBM,Physical,UNREACHABLE,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+LVG-SEC-M1A-PCI-02,10.182.27.221:443,cisco,ASA5555 (V05),PBM,Physical,Secondary - Failed,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-GUEST-02,10.123.159.33:443,cisco,ASA5555 (V05),PBM,Physical,Secondary - Active,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-NET4WIR-02/Capgemini,10.218.232.38:443,cisco,ASA5585-SSP-60,PBM,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-NET4WIR-02/EPCSVerizon,10.218.232.18:443,cisco,ASA5585-SSP-60,PBM,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-NET4WIR-02/TCS-VLAN88,10.218.232.32:443,cisco,ASA5585-SSP-60,PBM,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-NET4WIR-02/TTEC,10.218.232.42:443,cisco,ASA5585-SSP-60,PBM,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-NET4WIR-02/acs,10.218.232.48:443,cisco,ASA5585-SSP-60,PBM,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-NET4WIR-02/alere,10.218.232.12:443,cisco,ASA5585-SSP-60,PBM,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-NET4WIR-02/apac,10.218.232.50:443,cisco,ASA5585-SSP-60,PBM,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-NET4WIR-02/britishtelecom,10.218.232.44:443,cisco,ASA5585-SSP-60,PBM,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-NET4WIR-02/emdeon,10.218.232.52:443,cisco,ASA5585-SSP-60,PBM,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-NET4WIR-02/serco,10.218.232.16:443,cisco,ASA5585-SSP-60,PBM,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-NET4WIR-02/tcs,10.218.232.20:443,cisco,ASA5585-SSP-60,PBM,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-NET4WIR-02/trizetto,10.218.232.54:443,cisco,ASA5585-SSP-60,PBM,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-RS-02,10.123.254.71:443,cisco,ASA5585-SSP-60,PBM,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-SDWAN-02,10.10.124.33:443,cisco,FPR4K-SM-12,PBM,Physical,Secondary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXT-WFH-02,10.10.109.166:443,cisco,ASA5555 (V01),PBM,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-INT-SEMA-02,10.218.26.132:443,cisco,FPR4K-SM-44,PBM,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-INTPCI-01-vlan100,10.119.173.48,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-INTPCI-01-vlan113,10.119.173.50,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-INTPCI-01-vlan114,10.119.173.52,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-INTPCI-01-vlan33,10.119.173.44,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-INTPCI-01-vlan35,10.119.173.46,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-INTPCI-02-vlan100,10.119.173.49,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-INTPCI-02-vlan113,10.119.173.51,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-INTPCI-02-vlan114,10.119.173.53,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-INTPCI-02-vlan33,10.119.173.45,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-INTPCI-02-vlan35,10.119.173.47,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-INTWIR-02,204.99.62.2:443,cisco,FPR4K-SM-44S,PBM,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PCARCCMSECINT-01,10.58.0.40:443,cisco,,PBM,Physical,UNREACHABLE,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PCASTPV-SEC-DC-5NINE-FTD-01,10.73.24.217,cisco,Cisco Firepower 4145 Threat Defense,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PCASTPV-SEC-DC-5NINE-FTD-02,10.73.24.218,cisco,Cisco Firepower 4145 Threat Defense,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PGAATCPSECINTSEMA-01,10.38.88.11,Cisco,ASA5555,CVS,Physical,,,Unmanaged,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PGAATCPSECINTSEMA-01-FO,10.38.88.12,Cisco,ASA5555,CVS,Physical,,,Unmanaged,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PGATLPV-SEC-DC-5NINE-FTD-01,10.73.24.91,cisco,Cisco Firepower 4145 Threat Defense,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PGATLPV-SEC-DC-5NINE-FTD-02,10.73.24.92,cisco,Cisco Firepower 4145 Threat Defense,PCI Cloud,Physical,TRUE,,rriwsdcseccldfmc-02.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PIH-SEC-M1A-PCI-01,10.84.241.11:443,cisco,ASA5555 (V04),PBM,Physical,ONLINE,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PIH-SEC-M1A-PCI-02,10.84.241.11:443,cisco,ASA5555 (V04),PBM,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PPRCASP-SEC-MDF-SEMA-01-A,10.30.86.149,cisco,Cisco Firepower 2130 Threat Defense,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PPRCASP-SEC-MDF-SEMA-01-S,10.30.86.150,cisco,Cisco Firepower 2130 Threat Defense,PCI,Physical,TRUE,,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PRIWSDRSECEXTCA32-1-FTD,10.45.143.254,cisco,Cisco Firepower 4150 Threat Defense,Retail,Physical,TRUE,,rricmdc-sec-int-prd-mgt-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PTNBNCPSECINTSEMA-01.cvs.com,10.38.84.33,Cisco,ASA5555,CVS,Physical,,,Unmanaged,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PTNBNCPSECINTSEMA-01.cvs.com-FO,10.38.84.34,Cisco,ASA5555,CVS,Physical,,,Unmanaged,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PTXCMCC-SEC-MDF-PCI-01,10.24.248.236:443,cisco,ASA5555 (V04),PBM,Physical,UNREACHABLE,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PTXCMCC-SEC-MDF-PCI-02,10.24.248.236:443,cisco,ASA5555 (V04),PBM,Physical,Secondary - Failed,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RCALHDI-SEC-MDF-INT-02,10.195.1.10:443,cisco,ASA5516 (V05),Retail,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RFLVBDI-SEC-MDF-INT-02,10.192.97.10:443,cisco,ASA5516 (V05),Retail,Physical,Secondary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RNYWVDI-SEC-MDF-INT-02,10.191.65.10:443,cisco,ASA5516 (V05),Retail,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RPASTDI-SEC-MDF-INT-02,10.191.33.10:443,cisco,ASA5516 (V05),Retail,Physical,Secondary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRICMCP-SEC-MPLEAST-02,10.18.126.251:443,cisco,ASA5585-SSP-60,Retail,Physical,Primary,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRICMCP-SEC-MPLEAST-02/TTEC,10.0.127.28:443,cisco,ASA5585-SSP-60,Retail,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRICMCP-SEC-MPLEAST-02/britishtelecom,10.0.127.22:443,cisco,ASA5585-SSP-60,Retail,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRICMCP-SEC-MPLEAST-02/continuum,10.0.127.36:443,cisco,ASA5585-SSP-60,Retail,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRICMCP-SEC-MPLEAST-02/convey,10.0.127.12:443,cisco,ASA5585-SSP-60,Retail,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRICMCP-SEC-MPLEAST-02/endeavor,10.0.127.18:443,cisco,ASA5585-SSP-60,Retail,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRICMCP-SEC-MPLEAST-02/ext-cloud,10.0.127.20:443,cisco,ASA5585-SSP-60,Retail,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRICMCP-SEC-MPLEAST-02/geneva,10.0.127.34:443,cisco,ASA5585-SSP-60,Retail,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRICMCP-SEC-MPLEAST-02/grandview,10.0.127.31:443,cisco,ASA5585-SSP-60,Retail,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRICMCP-SEC-MPLEAST-02/mckesson,10.0.127.24:443,cisco,ASA5585-SSP-60,Retail,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRICMCP-SEC-MPLEAST-02/merwin,10.0.127.14:443,cisco,ASA5585-SSP-60,Retail,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRICMCP-SEC-MPLEAST-02/tcs,10.0.127.8:443,cisco,ASA5585-SSP-60,Retail,Physical,Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWFDI-SEC-MDF-INT-02,10.190.1.10:443,cisco,ASA5516 (V05),Retail,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWNCP-SEC-INTPRT-02,10.137.44.10:443,cisco,ASA5525 (V04),Retail,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSCP-SEC-EXT-AET-02,10.0.2.249:443,cisco,FPR-2140,Retail,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSCP-SEC-EXT-VF-01-FO.cvs.com,168.233.112.6,Cisco,ASA5550,CVS,Physical,,,Unmanaged,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSCP-SEC-EXT-VF-01.cvs.com,168.233.112.5,Cisco,ASA5550,CVS,Physical,,,Unmanaged,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSCP-SEC-EXT-VPN-01,10.17.7.12:443,cisco,ASA5555 (V02),Retail,Physical,UNREACHABLE,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSCP-SEC-EXT-VPN-02,10.17.7.12:443,cisco,ASA5555 (V02),Retail,Physical,Secondary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSCP-SEC-EXT-WFH-02,192.168.251.116:443,cisco,ASA5555 (V03),Retail,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSCP-SEC-INT-EMPTEMP-01,10.17.209.107,cisco,Cisco Firepower 9000 Series SM-56 Threat Defense,Retail,Physical,TRUE,,rricmdc-sec-int-prd-mgt-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSCP-SEC-STORELAB-01-RSIA,10.134.163.12,cisco,Cisco Firepower 4115 Threat Defense,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSCP-SEC-STORELAB-02-RSIA,10.134.163.15,cisco,Cisco Firepower 4115 Threat Defense,Dev,Physical,TRUE,,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSDC-SEC-EXT-SDWAN-02,10.17.208.118:443,cisco,FPR4K-SM-12,Retail,Physical,Secondary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSDC-SEC-INT-VIEW-02,10.18.104.10:443,cisco,ASA5516 (V05),Retail,Physical,Secondary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSDC-SEC-INT-VPN-02,10.131.2.36:443,cisco,ASA5555 (V04),Retail,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSDC-SEC-INT121B-01/admin,10.27.27.240:443,cisco,ASA5585-SSP-40,PBM,Physical,UNREACHABLE,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSDC-SEC-INT121B-01/pbm-retail,10.27.27.9:443,cisco,FPR4K-SM-44S,PBM,Physical,ONLINE,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSDC-SEC-INT121B-02/admin,10.27.27.240:443,cisco,ASA5585-SSP-40,PBM,Physical,Secondary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSDC-SEC-INT121B-02/pbm-retail,10.27.27.9:443,cisco,FPR4K-SM-44S,PBM,Physical,Secondary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSLBSECINTSEMA-01,10.134.163.9,Cisco,ASA5555,CVS,Physical,,,Unmanaged,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+RRIWSLBSECINTSEMA-01-FO,10.134.163.10,Cisco,ASA5555,CVS,Physical,,,Unmanaged,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+aws-use1nonprd-ingress-01,10.207.100.176,palo_alto,PA-VM,pano,Virtual,no,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+aws-use1nonprd-ingress-03,10.207.101.116,palo_alto,PA-VM,pano,Virtual,no,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+aws-use2nonprod-ingress-01,10.207.228.130,palo_alto,PA-VM,pano,Virtual,no,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+aws-use2nonprod-ingress-03,10.207.229.229,palo_alto,PA-VM,pano,Virtual,no,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+egcuse4nonprd-ingress-2-0-vm-01,10.243.0.34,palo_alto,PA-VM,pano,Virtual,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+egcuse4nonprd-ingress-2-0-vm-03,10.243.0.36,palo_alto,PA-VM,pano,Virtual,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+egcuse4nonprd-ingress-2-0-vm-04,10.243.0.37,palo_alto,PA-VM,pano,Virtual,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+egcuse4palopoc-01-vm,10.143.50.23,palo_alto,PA-VM,pano,Virtual,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+egcuse4palopoc-02-vm,10.143.50.12,palo_alto,PA-VM,pano,Virtual,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+egcuse4palopoc-03-vm,10.143.50.26,palo_alto,PA-VM,pano,Virtual,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+egcusw2nonprd-ingress-2-0-vm-01,10.243.32.34,palo_alto,PA-VM,pano,Virtual,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+egcusw2nonprd-ingress-2-0-vm-03,10.243.32.36,palo_alto,PA-VM,pano,Virtual,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+egcusw2nonprd-ingress-2-0-vm-04,10.243.32.37,palo_alto,PA-VM,pano,Virtual,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+epsfire1,10.106.96.11:443,cisco,,HCB,Physical,UNREACHABLE,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+lgs1501-01b-0104-usr-pa-fw01,10.20.10.53,palo_alto,PA-5445,pano,Physical,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+lgs1501-01b-0105-ext-pa-fw01,10.20.10.35,palo_alto,PA-5445,pano,Physical,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+lgs1502-10c-0104-usr-pa-fw02,10.20.10.54,palo_alto,PA-5445,pano,Physical,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+lgs1502-10c-0105-ext-pa-fw02,10.20.10.36,palo_alto,PA-5445,pano,Physical,yes,,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+mid-fw-pciqa-1,172.19.104.145,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,mid-fmc-pci-1.aetna.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+mid-fw-pciqa-2,172.19.104.146,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,mid-fmc-pci-1.aetna.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+mid-fw-pciqa-web-1,172.19.104.147,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,mid-fmc-pci-1.aetna.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+mid-fw-perfdmz-1,172.19.104.141,cisco,Cisco Firepower 4145 Threat Defense,QA,Physical,TRUE,,mid-fmc-nonprod-1.aetna.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+mid-fw-perfdmz-2,172.19.104.142,cisco,Cisco Firepower 4145 Threat Defense,QA,Physical,TRUE,,mid-fmc-nonprod-1.aetna.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+mid-fw-proxy-1,172.19.104.155,cisco,Cisco Firepower 4145 Threat Defense,Prod,Physical,TRUE,,mid-fmc-prod-1.aetna.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+mid-fw-proxy-2,172.19.104.156,cisco,Cisco Firepower 4145 Threat Defense,Prod,Physical,TRUE,,mid-fmc-prod-1.aetna.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+pazphccsecintmat-1,10.125.248.236:443,cisco,ASA5516 (V04),PBM,Physical,UNREACHABLE,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+pazphccsecintmat-2,10.125.248.236:443,cisco,ASA5516 (V04),PBM,Physical,Primary - Standby Ready,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+pazshdcsecextrs-1/SIP,10.231.124.6:443,cisco,,PBM,Physical,BAD_CREDENTIALS,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+pazshlbsecintsema-1-FO,10.218.26.141,Cisco,ASA5555,CVS,Physical,,,Unmanaged,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+pazshlbsecintsema-1.cvs.com,10.218.26.140,Cisco,ASA5555,CVS,Physical,,,Unmanaged,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+pmnedpvsecintmdf-1,10.37.255.10:443,cisco,,PBM,Physical,BAD_CREDENTIALS,Checking in team meeting,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+rfloromsecintmat-1,10.235.139.4:443,cisco,,PBM,Physical,UNREACHABLE,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+rriwscpsecintdcom-1-DR,10.10.107.249:443,cisco,,PBM,Physical,BAD_CREDENTIALS,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+rriwscpsecintdcom-1-DR,10.10.107.249:443,cisco,,Retail,Physical,BAD_CREDENTIALS,,cdo,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+win-fw-ironman-2,172.28.104.20,cisco,Cisco Firepower 2130 Threat Defense,Prod,Physical,TRUE,,mid-fmc-prod-1.aetna.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+win-fw-pcidevweb-1,172.28.104.146,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,mid-fmc-pci-1.aetna.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+win-fw-pcidevweb-2,172.28.104.147,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,,mid-fmc-pci-1.aetna.com,"ON-PREM — genuine config-collection gap, no naming-variant match found"
+PAZSHDC-SEC-EXTWIR-01,10.123.254.8,cisco,Cisco Firepower 9000 Series SM-56 Threat Defense,PSS/PBM Prod,Physical,FALSE,2025,pazshdc-sec-int-prd-mgt-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2025 — verify still needed before chasing
+PAZSHDC-SEC-EXTWIR-02,10.123.254.9,cisco,Cisco Firepower 9000 Series SM-56 Threat Defense,PSS/PBM Prod,Physical,FALSE,2025,pazshdc-sec-int-prd-mgt-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2025 — verify still needed before chasing
+PAZSHDC-SEC-EXT-NET4WIR-02,10.10.109.182:443,cisco,ASA5585-SSP-60,PBM,Physical,Primary - Standby Ready,2026,cdo,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+PAZSHDC-SEC-EXTATG-01,10.10.123.57,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,2026,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+PAZSHDC-SEC-EXTATG-02,10.10.123.58,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,2026,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+PAZSHDC-SEC-INTATG-01,10.10.123.53,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,2026,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+PAZSHDC-SEC-INTATG-02,10.10.123.54,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,2026,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+PTXDADC-SEC-CLDEQ-01,10.223.255.187,cisco,Cisco Firepower 9000 Series SM-56 Threat Defense,PCI Cloud,Physical,TRUE,2026,rriwsdcseccldfmc-02.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+PTXDADC-SEC-CLDEQ-02,10.223.255.190,cisco,Cisco Firepower 9000 Series SM-56 Threat Defense,PCI Cloud,Physical,TRUE,2026,rriwsdcseccldfmc-02.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+RRICMCP-SEC-INTATG-01,10.18.243.195,cisco,Cisco Firepower 4145 Threat Defense,PCI,Physical,TRUE,2026,rricmdc-sec-mgt-prd-pci-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+RRIWSCP-SEC-EXTDCOMPT-FTD-01,10.18.243.207,cisco,Cisco Firepower 4120 Threat Defense,Dev,Physical,TRUE,2026,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+RRIWSCP-SEC-EXTDCOMPT-FTD-02,10.18.243.208,cisco,Cisco Firepower 4120 Threat Defense,Dev,Physical,TRUE,2026,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+RRIWSCP-SEC-INTDCOM-DR-01,10.123.254.220,cisco,Cisco Firepower 4145 Threat Defense,PSS/PBM Prod,Physical,TRUE,2026,pazshdc-sec-int-prd-mgt-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+RRIWSCP-SEC-INTDCOM-DR-02,10.123.254.221,cisco,Cisco Firepower 4145 Threat Defense,PSS/PBM Prod,Physical,TRUE,2026,pazshdc-sec-int-prd-mgt-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+RRIWSCP-SEC-INTDCOMPT-FTD-01,10.18.243.205,cisco,Cisco Firepower 4120 Threat Defense,Dev,Physical,TRUE,2026,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+RRIWSCP-SEC-INTDCOMPT-FTD-02,10.18.243.206,cisco,Cisco Firepower 4120 Threat Defense,Dev,Physical,TRUE,2026,rricmdcsecfmcnonprod-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+RVAASCP-SEC-CLDEQ-02,10.223.255.174,cisco,Cisco Firepower 9000 Series SM-56 Threat Defense,PCI Cloud,Physical,TRUE,2026,rriwsdcseccldfmc-02.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+WON-SEC-INNO-LAB-01,10.17.43.254:443,cisco,ASA5516 (V05),Retail,Physical,NEW_CERT_DETECTED,2026,cdo,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+egcuse4nonprd2-0-vm-01,10.243.1.185,palo_alto,PA-VM,pano,Virtual,yes,2026,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+egcuse4nonprd2-0-vm-03,10.243.1.187,palo_alto,PA-VM,pano,Virtual,yes,2026,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+egcuse4nonprd2-0-vm-04,10.243.1.182,palo_alto,PA-VM,pano,Virtual,yes,2026,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+egcusw2nonprd2-0-vm-01,10.243.33.182,palo_alto,PA-VM,pano,Virtual,yes,2026,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+egcusw2nonprd2-0-vm-03,10.243.33.184,palo_alto,PA-VM,pano,Virtual,yes,2026,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+egcusw2nonprd2-0-vm-04,10.243.33.185,palo_alto,PA-VM,pano,Virtual,yes,2026,pazshdc-sec-pan-prod-01.corp.cvscaremark.com,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+mid-fw-daas.aetna.com,167.69.234.32,Cisco,ASA5525,HCB,Physical,,2026,Unmanaged,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+mid-fw-daas.aetna.com-FO,167.69.234.33,Cisco,ASA5525,HCB,Physical,,2026,Unmanaged,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+pazshdcsecextrs-1-RSIA,10.231.123.5,Cisco,ASA5585,CVS,Physical,,2026,Unmanaged,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+pazshdcsecextrs-1-RSIA-fo,10.231.123.6,Cisco,ASA5585,CVS,Physical,,2026,Unmanaged,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+win-fw-daas.aetna.com,167.69.234.160,Cisco,ASA5525,HCB,Physical,,2026,Unmanaged,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
+win-fw-daas.aetna.com-fo,167.69.234.161,Cisco,ASA5525,HCB,Physical,,2026,Unmanaged,SCHEDULED DECOMMISSION 2026 — verify still needed before chasing
