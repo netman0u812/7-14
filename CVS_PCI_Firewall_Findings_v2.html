@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CVS Health — PCI Firewall Implementation Compliance Analysis</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #ffffff; --ink: #1f2328; --ink-dim: #5b6169;
+    --border: #e2e2df; --accent: #8c1d18;
+    --allow: #1a7a3c; --allow-bg: #e8f5ec;
+    --drop: #a3271f; --drop-bg: #fbeceb;
+    --other: #8a7a1a; --other-bg: #f6f1e6;
+    --code-bg: #f1f0ec;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Georgia, 'Times New Roman', serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 48px 32px 96px; }
+  header.doc-header { border-bottom: 3px solid var(--accent); padding-bottom: 24px; margin-bottom: 40px; }
+  header.doc-header .eyebrow { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  h1 { font-size: 28px; margin: 8px 0 4px; }
+  .doc-sub { color: var(--ink-dim); font-size: 15px; font-family: -apple-system, Helvetica, Arial, sans-serif; }
+  h2 { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-top: 52px; }
+  h3 { font-size: 19px; margin-top: 8px; }
+  h4 { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 14px; margin: 14px 0 6px; }
+  p { font-size: 16px; }
+  code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 13px; background: var(--code-bg); padding: 1px 5px; border-radius: 3px; }
+  .notice { background: #fbf6e9; border: 1px solid #e5d9a8; border-radius: 6px; padding: 18px 22px; font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 14px; color: #5a4c1e; }
+  .notice strong { color: #3f3413; }
+  .notice ul { margin: 10px 0 0; padding-left: 20px; }
+  .correction { background: var(--drop-bg); border: 1px solid #e5b3ae; border-radius: 6px; padding: 18px 22px; font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 14px; color: #5a1f19; }
+  .correction strong { color: #3f1512; }
+  .correction ul { margin: 10px 0 0; padding-left: 20px; }
+  table { width: 100%; border-collapse: collapse; font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 12.5px; margin: 10px 0 20px; }
+  th, td { text-align: left; padding: 8px 11px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-dim); background: #f1f0ec; }
+  .act-block { color: var(--drop); font-weight: 600; }
+  .act-other { color: var(--other); font-weight: 600; }
+  .act-allow { color: var(--allow); font-weight: 600; }
+  .stat-cards { display: flex; flex-wrap: wrap; gap: 14px; margin: 16px 0 24px; }
+  .stat-card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; min-width: 140px; font-family: -apple-system, Helvetica, Arial, sans-serif; }
+  .stat-card .num { font-size: 22px; font-weight: 700; color: var(--accent); }
+  .stat-card .lbl { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-dim); margin-top: 4px; }
+  .finding-card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 24px 26px; margin-bottom: 22px; }
+  .finding-head { display: flex; align-items: center; gap: 12px; font-family: -apple-system, Helvetica, Arial, sans-serif; margin-bottom: 10px; flex-wrap: wrap; }
+  .finding-head h3 { margin: 0; flex: 1; }
+  .sev-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 5px 12px; border-radius: 5px; }
+  .sev-high { background: var(--drop-bg); color: var(--drop); }
+  .sev-med { background: var(--other-bg); color: var(--other); }
+  .sev-low { background: var(--allow-bg); color: var(--allow); }
+  .finding-card ul { font-size: 15px; padding-left: 22px; }
+  .finding-card li { margin-bottom: 8px; }
+  .dim { color: var(--ink-dim); }
+  .source-note { background: var(--code-bg); border-radius: 6px; padding: 10px 14px; font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 12.5px; color: var(--ink-dim); margin-top: 10px; }
+  .site-block { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px 20px; margin-bottom: 10px; }
+  .site-block h4 { color: var(--accent); margin-bottom: 8px; }
+  .device-list { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 12.5px; columns: 2; column-gap: 24px; }
+  .device-list div { break-inside: avoid; padding: 2px 0; }
+  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--border); font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 12px; color: var(--ink-dim); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="doc-header">
+    <div class="eyebrow">CVS Health &mdash; Information Security</div>
+    <h1>PCI Firewall Implementation Compliance Analysis</h1>
+    <div class="doc-sub">Cisco Secure Firewall / FMC &mdash; PCI Cardholder Data Environment &nbsp;&bull;&nbsp; Generated 2026-07-15</div>
+  </header>
+
+  <div class="notice">
+    <strong>Scope</strong>
+    <p style="margin:8px 0 0">56 PCI-segment firewalls across 9 sites, 10,531 rules across 18 explicitly PCI-named
+    Access Control Policies, plus an additional 25,439 rules on a PCI-designated FMC manager not confirmed as
+    CDE-scoped (Tier 2, flagged separately below). Findings are sourced from Cisco FMC policy exports and raw
+    device configurations dated June 15, 2026.</p>
+  </div>
+
+  <h2>Complete Device Inventory</h2>
+  <p style="font-size:15px">56 PCI-segment firewalls confirmed via raw device configuration exports (<code>FW_CONF_UPDATES.zip</code>, "PCI - 06-15-2026" snapshot, June 15, 2026), across 9 sites. This is the literal list of firewalls reviewed for this analysis.</p>
+
+  <div class="site-block"><h4>Cumberland (3 devices)</h4><div class="device-list">
+    <div>RRICMDC-SEC-INT-PCI-01</div><div>RRICMDC-SEC-INT-PCI-02</div><div>RRICMDCSECINTPCIFXOS-01</div>
+  </div></div>
+
+  <div class="site-block"><h4>GCP — Cloud (2 devices)</h4><div class="device-list">
+    <div>egc-use4-pci-ftd-01-vm</div><div>egc-usw2-pci-ftd-01-vm</div>
+  </div></div>
+
+  <div class="site-block"><h4>Hawaii (2 devices)</h4><div class="device-list">
+    <div>HOL-SEC-M1A-PCI-01</div><div>HOL-SEC-M1A-PCI-02</div>
+  </div></div>
+
+  <div class="site-block"><h4>Middletown (14 devices)</h4><div class="device-list">
+    <div>mid-fw-pciprod-1</div><div>mid-fw-pciprod-2</div>
+    <div>mid-fw-pciprod-app-ftd-1</div><div>mid-fw-pciprod-app-ftd-2</div>
+    <div>mid-fw-pciprod-sysadm-ftd-1</div><div>mid-fw-pciprod-sysadm-ftd-2</div>
+    <div>mid-fw-pciprod-web-ftd-1</div><div>mid-fw-pciprod-web-ftd-2</div>
+    <div>mid-fw-pciqa-1</div><div>mid-fw-pciqa-2</div>
+    <div>mid-fw-pciqa-2-b</div><div>mid-fw-pciqa-ftd-1</div>
+    <div>mid-fw-pciqa-web-2</div><div>mid-fw-pciqaweb-ftd-1</div>
+  </div></div>
+
+  <div class="site-block"><h4>Pittsburgh (2 devices)</h4><div class="device-list">
+    <div>PIH-SEC-M1A-PCI-01</div><div>PIH-SEC-M1A-PCI-01-FO</div>
+  </div></div>
+
+  <div class="site-block"><h4>SHEA / Las Vegas (13 devices)</h4><div class="device-list">
+    <div>PAZSHDC-SEC-INT-PCI-FXOS-01</div><div>PAZSHDC-SEC-INT-PCI-FXOS-02</div>
+    <div>PAZSHDC-SEC-INTPCI-01-vlan100</div><div>PAZSHDC-SEC-INTPCI-01-vlan113</div>
+    <div>PAZSHDC-SEC-INTPCI-01-vlan114</div><div>PAZSHDC-SEC-INTPCI-01-vlan33</div>
+    <div>PAZSHDC-SEC-INTPCI-01-vlan35</div><div>PAZSHDC-SEC-INTPCI-02-vlan100</div>
+    <div>PAZSHDC-SEC-INTPCI-02-vlan113</div><div>PAZSHDC-SEC-INTPCI-02-vlan114</div>
+    <div>PAZSHDC-SEC-INTPCI-02-vlan33</div><div>PAZSHDC-SEC-INTPCI-02-vlan35</div>
+    <div>PAZSHDCSECINTEXPFTDPCI-01</div>
+  </div></div>
+
+  <div class="site-block"><h4>San Antonio (2 devices)</h4><div class="device-list">
+    <div>ptxsnmosecintpcimdf-1</div><div>ptxsnmosecintpcimdf-1-FO</div>
+  </div></div>
+
+  <div class="site-block"><h4>Windsor (14 devices)</h4><div class="device-list">
+    <div>win-fw-pcidev-1</div><div>win-fw-pcidev-2</div>
+    <div>win-fw-pcidev-ftd-1</div><div>win-fw-pcidev-ftd-2</div>
+    <div>win-fw-pcidevweb-ftd-1</div><div>win-fw-pcidevweb-ftd-2</div>
+    <div>win-fw-pciprod-1</div><div>win-fw-pciprod-2</div>
+    <div>win-fw-pciprod-app-ftd-1</div><div>win-fw-pciprod-app-ftd-2</div>
+    <div>win-fw-pciprod-sysadm-ftd-1</div><div>win-fw-pciprod-sysadm-ftd-2</div>
+    <div>win-fw-pciprod-web-ftd-1</div><div>win-fw-pciprod-web-ftd-2</div>
+  </div></div>
+
+  <div class="site-block"><h4>Woonsocket (4 devices)</h4><div class="device-list">
+    <div>RRIWSDC-SEC-INT-PCI-FX-01</div><div>RRIWSDC-SEC-INT-PCI-FX-02</div>
+    <div>RRIWSDC-SEC-INTPCIFTD-01</div><div>RRIWSDC-SEC-INTPCIFTD-02</div>
+  </div></div>
+
+  <p style="font-size:14px" class="dim">Plus two FMC manager platforms confirmed governing PCI policy (not enforcement devices themselves): <code>pazshdc-sec-int-prd-mgt-01</code> (governs SHEA/Vegas-based CVS-heritage PCI policies — Legacy VLANs, Nexus, plus the five IPS-Only constructs) and <code>rricmdc-sec-mgt-prd-pci-01</code> (governs Cumberland/RI-based policies — Retail, plus the additional Tier 2 set below). The Middletown/Windsor Aetna-heritage tier is governed by a separate manager not named in these exports.</p>
+
+  <div class="stat-cards">
+    <div class="stat-card"><div class="num">56</div><div class="lbl">Confirmed PCI devices</div></div>
+    <div class="stat-card"><div class="num">9</div><div class="lbl">Sites</div></div>
+    <div class="stat-card"><div class="num">10,531</div><div class="lbl">Tier 1 rules (explicitly PCI-named)</div></div>
+    <div class="stat-card"><div class="num">25,439</div><div class="lbl">Tier 2 rules (PCI-manager-hosted)</div></div>
+  </div>
+
+  <h2>Data Sources</h2>
+  <table>
+    <tr><th style="width:20%">Archive</th><th style="width:14%">Files Processed</th><th>What It Contained</th></tr>
+    <tr><td><code>Cisco_FMC_PCI.zip</code></td><td>2 of 2</td><td>Master aggregate: 8 ACPs, 8,734 rules (GCP-CaaS-PCI, 5&times; PSS-LEGACY-PCI-VLAN, PSS-Nexus-PCI-Policy, RETAIL-INTPCI-POLICY). Duplicated inside <code>FW_POLICIES.zip</code> at two paths.</td></tr>
+    <tr><td><code>PCI-Policies-CSV.zip</code></td><td>16 of 16</td><td>The same 8 policies as above, broken out individually with paired prefilter exports — confirmed as the source data behind the master aggregate, not additional scope.</td></tr>
+    <tr><td><code>FW_POLICIES.zip</code></td><td>228 of 228</td><td>Contains the master aggregate (duplicate), the <code>MID-FMC-PCI-1</code> partial Middletown/Windsor set (8 policies, superseded by the fuller Aetna export below), the <strong>Aetna tier</strong> (<code>Cisco_FMC_Aetha</code>, 10 policies, 1,797 rules, the authoritative version of that tier), the <strong>Tier 2 set</strong> (<code>rricmdc-sec-mgt-prd-pci-01</code>, 8 policies, 25,439 rules), the five <strong>"(IPS Only)"</strong> catch-all policies, one retired policy (<code>z_Inactive_Legacy_PCI_PBM</code>), and a large volume of non-PCI policies (MPLS/site-to-site, cloud, retail-egress, lab) not in scope for this analysis.</td></tr>
+    <tr><td><code>FW_CONF_UPDATES.zip</code></td><td>96 of 96 top-level; nested zips extracted where PCI-relevant</td><td>The raw device configs for all 56 devices above (June 15, 2026 snapshot). Nested archives (<code>RETAIL-PSS-Archive.zip</code>, two copies of the SHEA policy export, an "extracted-IPs" archive) were extracted and confirmed as duplicates of data already captured elsewhere — not additional scope. A large volume of non-PCI content (Palo Alto configs, VPN, NET4, Equinix, cloud) was identified but is out of scope for a PCI-specific analysis.</td></tr>
+    <tr><td><code>FW_Configs_6-4-26.zip</code></td><td>181 of 181</td><td>An earlier (June 4, 2026) snapshot of the Middletown/Windsor tier device configs and the Tier 2 <code>rricmdc-sec-mgt-prd-pci-01</code> raw configs. Diffed one device config against its June 15 counterpart: minor, ordinary operational drift (a handful of new network objects), not a material discrepancy. June 15 is treated as authoritative where both exist.</td></tr>
+  </table>
+
+  <h2>Key Findings</h2>
+
+  <div class="finding-card">
+    <div class="finding-head"><h3>1. IPS coverage across the confirmed PCI policy set: 48.0%</h3><span class="sev-tag sev-high">High Severity</span></div>
+    <ul>
+      <li><strong>Combined across all 18 Tier-1 (explicitly PCI-named) policies: 3,594 of 7,491 enabled Allow rules (48.0%) have an IPS policy attached.</strong> 15 of the 18 policies show <strong>0.0%</strong> coverage. Only three — <code>PSS-Nexus-PCI-Policy</code> (94.9%), <code>RETAIL-INTPCI-POLICY</code> (55.8%), and the 2-rule <code>GCP-CaaS-PCI Policy</code> (100%) — carry meaningful IPS coverage.</li>
+      <li><strong>The entire Middletown/Windsor Aetna-heritage tier — all 10 policies, 1,562 enabled Allow rules — has confirmed zero IPS coverage, with no mitigating construct found anywhere in the data.</strong> This is the single largest, best-supported instance of this gap.</li>
+      <li><strong>The five SHEA/Vegas <code>PSS-LEGACY-PCI-VLAN*</code> policies (2,056 enabled Allow rules) also show 0.0% in their main ACP.</strong> A separate <strong>"(IPS Only) Las Vegas Voyager"</strong> policy exists, with one enabled catch-all rule ("Inspect All", no network scoping, IPS policy "Las Vegas Voyager" attached, mode <code>DETECTION</code>). <strong>Whether this applies to the same physical devices enforcing the Legacy VLAN policies could not be confirmed</strong> from the data available — FMC's device-to-policy bindings aren't visible in the raw CLI-style device configs, and no reference to this policy name was found in any SHEA device config checked. Requires direct confirmation from the FMC administrator.</li>
+      <li><strong>Hawaii and Pittsburgh have only an "(IPS Only)" construct — no main traffic-control ACP was found for either site</strong> across any source provided. This analysis cannot characterize their Allow/Block rule posture, only that a Detection-mode IPS catch-all exists. San Antonio is in the same position.</li>
+      <li><strong>Independent of the binding question: every one of the five "(IPS Only)" policies runs in <code>DETECTION</code> mode, not <code>PREVENTION</code>.</strong> Detection mode alerts on intrusions; it doesn't block them. Even in the best-case reading where these are fully bound to the relevant devices, this is a detection layer, not a prevention one.</li>
+    </ul>
+    <div class="source-note">Sources: <code>Cisco_FMC_PCI/PCI_FW_Policies_All.csv</code> + <code>Cisco_FMC_Aetha/Mid-FMC-PCI-Policies.csv</code> combined for the Tier-1 figure; <code>pazshdc-sec-int-prd-mgt-01_07-08-2026/_IPS_Only__*.csv</code> for the catch-all policies; raw SHEA device configs checked directly for a binding reference and none found.</div>
+  </div>
+
+  <div class="finding-card">
+    <div class="finding-head"><h3>2. A second, large-scale policy set exists on a PCI-designated FMC manager — included with an explicit confidence caveat</h3><span class="sev-tag sev-med">Medium Severity / Scope Question</span></div>
+    <ul>
+      <li>The FMC manager directory <code>rricmdc-sec-mgt-prd-pci-01</code> — named as a PCI security-management platform — hosts 8 additional policies totaling <strong>25,439 rules</strong>: <code>INT-DCOM-Policy</code> (13,886), <code>EXT-DCOM-Policy</code> (5,472), <code>Retail-ATG-INT-Policy</code> (2,819), <code>PSS-ATG-INT_Policy</code> (946), <code>Retail-ATG-EXT-Policy</code> (909), <code>az-htrust-001-acp</code> (622), <code>PSS-ATG-EXT_Policy</code> (537), <code>STRATUS_ACCESS_POLICY</code> (248).</li>
+      <li>Unlike the Tier-1 set, none of these policy names explicitly say "PCI" — rule comments reference Tufin migration tickets and RITM change numbers consistent with the same estate-wide pattern seen elsewhere, but the traffic these specifically govern (DCOM, ATG, Stratus, and an Azure-hosted trust relationship) isn't self-evidently cardholder-data traffic the way <code>RETAIL-INTPCI-POLICY</code> is.</li>
+      <li>Being hosted on a manager explicitly labeled for PCI security management is meaningful signal, but not proof that every rule here is CDE-scoped — treated here as <strong>Tier 2: plausible PCI-adjacent scope, not confirmed CDE scope.</strong></li>
+      <li><code>INT-DCOM-Policy</code> is also notably large and only 40.2% enabled (5,590 of 13,886) — if this does turn out to be CDE-scoped, it would be the single largest rule-hygiene concern in the entire estate, well past the Retail policy's 92.7% disabled ratio in absolute rule count.</li>
+      <li>No IPS-policy field exists in this schema at all, so IPS coverage cannot be assessed for Tier 2 from the data available.</li>
+    </ul>
+    <div class="source-note">Source: <code>FW_POLICIES/rricmdc-sec-mgt-prd-pci-01/*.csv</code>, all 8 files processed in full.</div>
+  </div>
+
+  <div class="finding-card">
+    <div class="finding-head"><h3>3. Ruleset hygiene — two large policies dominated by disabled rules</h3><span class="sev-tag sev-med">Medium Severity</span></div>
+    <ul>
+      <li><code>RETAIL-INTPCI-POLICY</code>: 2,686 of 2,898 rules (92.7%) disabled — the finding from v1.0, confirmed unchanged.</li>
+      <li>Across the Middletown/Windsor Aetna tier, disabled-rule ratios run 4.2%&ndash;17.5% per policy — real but far smaller than Retail's, worth a lighter-touch review rather than a priority item.</li>
+      <li>If Tier 2's <code>INT-DCOM-Policy</code> is confirmed as CDE-scoped, its 59.8% disabled ratio (8,296 of 13,886 rules) would be the largest hygiene gap in the estate by rule count.</li>
+      <li>The <code>category</code> field remains 100% "--Undefined--" across every Tier-1 rule checked — no rules anywhere in the confirmed PCI scope are organized into named categories.</li>
+    </ul>
+    <div class="source-note">Source: <code>enabled</code> field grouped by policy, Tier-1 combined dataset and Tier-2 <code>INT-DCOM-Policy</code>.</div>
+  </div>
+
+  <div class="finding-card">
+    <div class="finding-head"><h3>4. Segmentation, logging, and legacy protocols</h3><span class="sev-tag sev-med">Medium Severity</span></div>
+    <ul>
+      <li>23 enabled Allow rules with any/any network scope (mostly protocol-scoped — ICMP, OSPF), 57 with any destination port, concentrated in the Legacy VLAN policies. Explicit deny rules (e.g. <code>OK_DENIED_INBOUND_CITRIX_HOSTS</code>) confirm deliberate design intent exists alongside these.</li>
+      <li>Device-level syslog forwarding is genuinely active — multiple redundant hosts confirmed directly in raw configs at SHEA, Middletown, and Windsor. Connection-start vs. connection-end capture is inconsistent between policy sets: the master set logs 82.1% start / 21.5% end, while the Aetna tier logs 24.3% start / 92.4% end.</li>
+      <li>SNMPv2c community-string authentication is confirmed alongside SNMPv3 on PCI devices across virtually every site checked.</li>
+      <li>TLS 1.2 confirmed where the setting was visible (Woonsocket, GCP) — not confirmed estate-wide.</li>
+    </ul>
+    <div class="source-note">Source: combined Tier-1 dataset (10,531 rules) and direct device-config review.</div>
+  </div>
+
+  <h2>PCI DSS v4.0.1 Compliance Verdict</h2>
+  <table>
+    <tr><th style="width:14%">Requirement</th><th style="width:20%">Requirement Summary</th><th style="width:15%">Verdict</th><th>Basis</th></tr>
+    <tr><td><code>Req 6</code> / <code>Req 11.4</code></td><td>Intrusion Detection/Prevention on the CDE perimeter</td><td class="act-block">Out of Compliance</td><td>48.0% IPS coverage across the confirmed PCI estate; 15 of 18 Tier-1 policies at 0.0%; the Middletown/Windsor tier's gap has no identified mitigation anywhere in the data. The strongest finding in this analysis.</td></tr>
+    <tr><td><code>Req 1.2.7</code></td><td>Review of Firewall/Router Configurations</td><td class="act-block">Out of Compliance</td><td>92.7% disabled ruleset on Retail, zero rule categorization estate-wide, and (if Tier 2 is confirmed in-scope) a 13,886-rule policy that's 59.8% disabled.</td></tr>
+    <tr><td><code>Req 2.2.1</code></td><td>Vendor Defaults / Insecure Services and Protocols</td><td class="act-block">Out of Compliance</td><td>SNMPv2c confirmed nearly estate-wide, unchanged from v1.0.</td></tr>
+    <tr><td><code>Req 1.2 / 1.3</code></td><td>Network Segmentation Controls</td><td class="act-other">Partially Aligned</td><td>Unchanged from v1.0 — real design discipline exists (explicit denies) alongside a small number of genuinely broad rules concentrated in Legacy VLANs.</td></tr>
+    <tr><td><code>Req 10.2</code></td><td>Audit Trails Capturing Sufficient Detail</td><td class="act-other">Partially Aligned</td><td>Logging is active and centralized; start/end capture inconsistency confirmed across the larger combined dataset, not just the original sample.</td></tr>
+    <tr><td><code>Req 4.2.1</code></td><td>Strong Cryptography for Transmission</td><td class="act-allow">Aligned <span class="dim">(where confirmed)</span></td><td>Unchanged from v1.0 — TLS 1.2 confirmed on the subset of devices where visible; no weak-TLS finding in the PCI-specific device set.</td></tr>
+  </table>
+
+  <h2>Open Items Requiring Direct Confirmation</h2>
+  <div class="finding-card">
+    <ul>
+      <li><strong>Is the "(IPS Only) Las Vegas Voyager" policy actually deployed to the same devices as the five <code>PSS-LEGACY-PCI-VLAN*</code> policies?</strong> This single answer determines whether Finding 1's most severe instance is the Aetna tier alone, or the Aetna tier plus a confirmed-uninspected SHEA Legacy VLAN set as well.</li>
+      <li><strong>Is Tier 2 (<code>rricmdc-sec-mgt-prd-pci-01</code>'s 25,439 rules) actually CDE-scoped?</strong> If yes, this analysis needs to expand substantially — IPS coverage cannot currently be assessed for it at all, and its hygiene picture (if <code>INT-DCOM-Policy</code> is included) is worse than anything found in Tier 1.</li>
+      <li><strong>What main Allow/Block ACP, if any, governs Hawaii, Pittsburgh, and San Antonio?</strong> Only an IPS-Only Detection-mode construct was found for these three sites across all five archives — their actual traffic-control posture is unknown from the data provided.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Companion to the Security Stack Capability-Alignment Roadmap. Every figure in this document is traceable to a
+    specific source file; where a question couldn't be answered from the data provided, it's listed under Open
+    Items rather than assumed in either direction.
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CVS Health — PCI Firewall Policy Standard</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #ffffff; --ink: #1f2328; --ink-dim: #5b6169;
+    --border: #e2e2df; --accent: #8c1d18;
+    --allow: #1a7a3c; --allow-bg: #e8f5ec;
+    --drop: #a3271f; --drop-bg: #fbeceb;
+    --other: #8a7a1a; --other-bg: #f6f1e6;
+    --code-bg: #f1f0ec;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Georgia, 'Times New Roman', serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 48px 32px 96px; }
+  header.doc-header { border-bottom: 3px solid var(--accent); padding-bottom: 24px; margin-bottom: 40px; }
+  header.doc-header .eyebrow { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  h1 { font-size: 28px; margin: 8px 0 4px; }
+  .doc-sub { color: var(--ink-dim); font-size: 15px; font-family: -apple-system, Helvetica, Arial, sans-serif; }
+  h2 { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-top: 52px; }
+  h3 { font-size: 20px; margin-top: 8px; }
+  h4 { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 13px; margin: 0; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-dim); }
+  p { font-size: 16px; }
+  code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 13px; background: var(--code-bg); padding: 1px 5px; border-radius: 3px; }
+  .notice { background: #fbf6e9; border: 1px solid #e5d9a8; border-radius: 6px; padding: 18px 22px; font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 14px; color: #5a4c1e; }
+  .notice strong { color: #3f3413; }
+  table { width: 100%; border-collapse: collapse; font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 12.5px; margin: 10px 0 20px; }
+  th, td { text-align: left; padding: 8px 11px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-dim); background: #f1f0ec; }
+  .act-block { color: var(--drop); font-weight: 600; }
+  .act-other { color: var(--other); font-weight: 600; }
+  .act-allow { color: var(--allow); font-weight: 600; }
+  .func-card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 26px 28px; margin-bottom: 22px; }
+  .func-head { display: flex; align-items: center; gap: 14px; font-family: -apple-system, Helvetica, Arial, sans-serif; margin-bottom: 4px; flex-wrap: wrap; }
+  .func-num { font-size: 15px; font-weight: 700; color: #fff; background: var(--accent); border-radius: 50%; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .func-head h3 { margin: 0; flex: 1; }
+  .status-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 5px 12px; border-radius: 5px; }
+  .tag-fail { background: var(--drop-bg); color: var(--drop); }
+  .tag-partial { background: var(--other-bg); color: var(--other); }
+  .tag-pass { background: var(--allow-bg); color: var(--allow); }
+  .policy-statement { font-size: 15.5px; font-style: italic; color: var(--ink); border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; margin: 12px 0 16px; }
+  .spec-grid { display: grid; grid-template-columns: 140px 1fr; gap: 6px 16px; font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 6px; }
+  .spec-grid .k { color: var(--ink-dim); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; padding-top: 2px; }
+  .baseline-box { background: var(--code-bg); border-radius: 6px; padding: 12px 16px; margin-top: 14px; font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 13.5px; }
+  .dim { color: var(--ink-dim); }
+  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--border); font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 12px; color: var(--ink-dim); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="doc-header">
+    <div class="eyebrow">CVS Health &mdash; Information Security</div>
+    <h1>PCI Firewall Policy Standard</h1>
+    <div class="doc-sub">A Measurable Policy-Function Set for the PCI Cardholder Data Environment &nbsp;&bull;&nbsp; Generated 2026-07-15</div>
+  </header>
+
+  <div class="notice">
+    <strong>Purpose and standards basis</strong>
+    <p style="margin:8px 0 0">This standard defines eight discrete, measurable policy functions for firewall
+    governance across the PCI CDE. Each function is grounded in a specific, currently-active standard — not general
+    best practice — and paired with a formula, a target threshold, and the measurement method needed to track it on
+    an ongoing basis. Baseline figures are drawn directly from the companion Findings document.</p>
+    <p style="margin:10px 0 0"><strong>Standards referenced, confirmed current as of this writing:</strong>
+    PCI DSS v4.0.1 (the only active version, fully mandatory since March 31, 2025); NIST SP 800-53 Rev. 5
+    (the current control catalog, 1,196 controls / 20 families); NIST SP 800-41 Rev. 1, <em>Guidelines on
+    Firewalls and Firewall Policy</em> (2009 — still the current revision, no Rev. 2 exists, and the direct
+    NIST source for how a firewall policy itself should be structured); NIST SP 800-30 Rev. 1 for risk rating.</p>
+  </div>
+
+  <h2>Function 1 — Intrusion Prevention Coverage</h2>
+  <div class="func-card">
+    <div class="func-head"><span class="func-num">1</span><h3>Every enabled Allow rule in a CDE-adjacent policy carries an active, Prevention-mode IPS policy</h3><span class="status-tag tag-fail">Currently Failing</span></div>
+    <div class="policy-statement">"All network traffic permitted through a PCI-segment firewall must be subject to intrusion prevention inspection operating in blocking (Prevention) mode. Detection-only inspection does not satisfy this function."</div>
+    <div class="spec-grid">
+      <div class="k">Standards Basis</div><div>PCI DSS v4.0.1 Req 11.4 / Req 6 (general); NIST SP 800-53 Rev. 5 <code>SI-4</code> (System Monitoring); NIST SP 800-41 Rev. 1 &sect;5 (firewall/IDPS integration)</div>
+      <div class="k">Metric</div><div><code>(enabled Allow rules with an IPS policy attached, inspectionMode = PREVENTION) &divide; (total enabled Allow rules)</code>, computed per policy and rolled up estate-wide</div>
+      <div class="k">Target</div><div>&ge; 95% per policy, no policy below 80%; 0% acceptable in Detection-only mode for any rule in direct CDE scope</div>
+      <div class="k">Measurement</div><div>Automated export of <code>ips_policy</code> / <code>ipsPolicy.inspectionMode</code> fields from FMC per policy, monthly</div>
+      <div class="k">Owner</div><div>Firewall Engineering, reviewed by PCI ISA</div>
+    </div>
+    <div class="baseline-box"><strong>Current baseline:</strong> 48.0% estate-wide (3,594 of 7,491 enabled Allow rules). 15 of 18 confirmed PCI policies at 0.0%. Where a Prevention-mode equivalent exists at all (the "(IPS Only)" constructs), it runs in Detection mode, which does not meet this function's target as written.</div>
+  </div>
+
+  <h2>Function 2 — Ruleset Review and Lifecycle Hygiene</h2>
+  <div class="func-card">
+    <div class="func-head"><span class="func-num">2</span><h3>Every firewall policy is formally reviewed on a fixed cadence, and disabled rules are removed, not accumulated</h3><span class="status-tag tag-fail">Currently Failing</span></div>
+    <div class="policy-statement">"Firewall rulesets are reviewed at least every six months. Rules disabled for longer than one review cycle are removed or formally re-justified, not left in place indefinitely."</div>
+    <div class="spec-grid">
+      <div class="k">Standards Basis</div><div>PCI DSS v4.0.1 Req 1.2.7 (explicit six-month review cadence); NIST SP 800-41 Rev. 1 &sect;4.3 (ruleset management)</div>
+      <div class="k">Metric</div><div><code>(disabled rules) &divide; (total rules)</code> per policy; <code>days since last documented review</code> per policy</div>
+      <div class="k">Target</div><div>Disabled-rule ratio &le; 10% per policy; documented review completed within the last 180 days for every policy, with evidence retained</div>
+      <div class="k">Measurement</div><div>Quarterly ruleset export and review-log audit against the 180-day requirement</div>
+      <div class="k">Owner</div><div>Firewall Engineering, signed off by Change Advisory Board</div>
+    </div>
+    <div class="baseline-box"><strong>Current baseline:</strong> <code>RETAIL-INTPCI-POLICY</code> at 92.7% disabled (2,686 of 2,898 rules). Middletown/Windsor tier running 4.2%&ndash;17.5% disabled per policy. No review-cadence evidence was available to assess against the 180-day target directly — treat as failing until evidence is produced.</div>
+  </div>
+
+  <h2>Function 3 — Audit Trail Completeness</h2>
+  <div class="func-card">
+    <div class="func-head"><span class="func-num">3</span><h3>Every enabled rule logs both connection start and connection end, forwarded to a central log destination</h3><span class="status-tag tag-partial">Partially Meeting</span></div>
+    <div class="policy-statement">"Firewall rules record sufficient detail to reconstruct a complete connection lifecycle, and that record is forwarded off-device to centralized, tamper-resistant storage."</div>
+    <div class="spec-grid">
+      <div class="k">Standards Basis</div><div>PCI DSS v4.0.1 Req 10.2; NIST SP 800-53 Rev. 5 <code>AU-2</code>, <code>AU-12</code>; NIST SP 800-41 Rev. 1 &sect;4.5 (logging)</div>
+      <div class="k">Metric</div><div><code>(enabled rules with log_begin = True AND log_end = True) &divide; (total enabled rules)</code>; separately, <code>(devices with a confirmed active syslog destination) &divide; (total devices)</code></div>
+      <div class="k">Target</div><div>&ge; 95% dual-logged per policy; 100% of devices confirmed forwarding to a redundant central log destination</div>
+      <div class="k">Measurement</div><div>Monthly rule-field export; annual direct device-config verification of <code>logging host</code> configuration</div>
+      <div class="k">Owner</div><div>Firewall Engineering / SOC</div>
+    </div>
+    <div class="baseline-box"><strong>Current baseline:</strong> device-level forwarding confirmed active with redundant destinations at every site checked. Dual-logging (start + end) is inconsistent: 21.5% on the master policy set, 92.4% on the Middletown/Windsor tier — neither policy set meets the 95% target uniformly, and the two sets aren't even converging on the same half of the connection lifecycle.</div>
+  </div>
+
+  <h2>Function 4 — Management-Plane Cryptographic Standards</h2>
+  <div class="func-card">
+    <div class="func-head"><span class="func-num">4</span><h3>All device management protocols use current, strong authentication and encryption — no legacy fallback</h3><span class="status-tag tag-fail">Currently Failing</span></div>
+    <div class="policy-statement">"SNMP polling uses only version 3 with encrypted authentication. TLS-terminating management interfaces run TLS 1.2 or higher exclusively."</div>
+    <div class="spec-grid">
+      <div class="k">Standards Basis</div><div>PCI DSS v4.0.1 Req 2.2.1 (no insecure services/protocols) and Req 4.2.1 (strong cryptography); NIST SP 800-53 Rev. 5 <code>IA-5</code>, <code>SC-8</code></div>
+      <div class="k">Metric</div><div><code>(SNMP hosts configured as v3) &divide; (total configured SNMP hosts)</code>; <code>(devices with confirmed minimum TLS &ge; 1.2)</code> &divide; (total devices)</div>
+      <div class="k">Target</div><div>100% SNMPv3; zero SNMPv2c community-string hosts; 100% TLS &ge; 1.2 confirmed and documented per device</div>
+      <div class="k">Measurement</div><div>Direct device-config grep for <code>snmp-server host ... version 2c</code> and <code>ssl server-version</code>, per change window and audited annually</div>
+      <div class="k">Owner</div><div>Firewall Engineering</div>
+    </div>
+    <div class="baseline-box"><strong>Current baseline:</strong> SNMPv2c community-string hosts confirmed present alongside SNMPv3 on PCI devices at every site checked — 0% compliant against the "zero legacy" target. TLS 1.2 confirmed only where the setting was visible in available exports (Woonsocket, GCP) — not yet verified estate-wide.</div>
+  </div>
+
+  <h2>Function 5 — Rule Specificity and Segmentation</h2>
+  <div class="func-card">
+    <div class="func-head"><span class="func-num">5</span><h3>No rule permits traffic without specific, justified source, destination, and service scope</h3><span class="status-tag tag-partial">Partially Meeting</span></div>
+    <div class="policy-statement">"Firewall rules are as specific as operationally possible. Any rule using an unrestricted network or port scope carries a documented business or technical justification on file."</div>
+    <div class="spec-grid">
+      <div class="k">Standards Basis</div><div>PCI DSS v4.0.1 Req 1.2 / 1.3; NIST SP 800-41 Rev. 1 &sect;4.3 (ruleset specificity is a named recommendation)</div>
+      <div class="k">Metric</div><div><code>count of enabled Allow rules with src_network = any AND dst_network = any</code>; <code>count with dst_port = any</code>, both without an attached justification reference</div>
+      <div class="k">Target</div><div>Zero unscoped rules without a documented, ticketed justification; unscoped protocol-only rules (ICMP, routing protocols) are exempt if formally whitelisted as such</div>
+      <div class="k">Measurement</div><div>Quarterly rule-scope export, cross-referenced against change-ticket records</div>
+      <div class="k">Owner</div><div>Firewall Engineering</div>
+    </div>
+    <div class="baseline-box"><strong>Current baseline:</strong> 23 any/any rules and 57 any-destination-port rules identified, concentrated in the Legacy VLAN policies. Most any/any instances are protocol-scoped (ICMP, OSPF) and would likely qualify for the protocol-exemption above once formally documented; the any-port subset needs individual review.</div>
+  </div>
+
+  <h2>Function 6 — Rule Documentation and Categorization</h2>
+  <div class="func-card">
+    <div class="func-head"><span class="func-num">6</span><h3>Every rule carries a meaningful name, a category, and a traceable change reference</h3><span class="status-tag tag-fail">Currently Failing</span></div>
+    <div class="policy-statement">"No rule exists without a named category and a description sufficient for a reviewer to understand its purpose without cross-referencing external systems."</div>
+    <div class="spec-grid">
+      <div class="k">Standards Basis</div><div>PCI DSS v4.0.1 Req 1.1 (documented configuration standards); NIST SP 800-41 Rev. 1 &sect;4.3</div>
+      <div class="k">Metric</div><div><code>(rules with a non-default category) &divide; (total rules)</code>; <code>(rules with a name other than an auto-generated migration tag) &divide; (total rules)</code></div>
+      <div class="k">Target</div><div>&ge; 90% categorized; auto-generated migration-tool names (e.g. <code>Tufin-####</code>) reduced to &lt; 5% of the ruleset over time, via re-documentation during each policy's review cycle</div>
+      <div class="k">Measurement</div><div>Annual full-ruleset export and name/category audit</div>
+      <div class="k">Owner</div><div>Firewall Engineering</div>
+    </div>
+    <div class="baseline-box"><strong>Current baseline:</strong> the <code>category</code> field is unset ("--Undefined--") for 100% of the 10,531 confirmed Tier-1 rules — 0% against target. A confirmed volume of rules across every policy still carry auto-generated migration-tool names rather than descriptive ones.</div>
+  </div>
+
+  <h2>Function 7 — Policy-to-Device Binding Documentation</h2>
+  <div class="func-card">
+    <div class="func-head"><span class="func-num">7</span><h3>Every enforcement device has a documented, verifiable mapping to the policy (or policies) governing it</h3><span class="status-tag tag-fail">Currently Failing</span></div>
+    <div class="policy-statement">"For every firewall in the CDE, the specific Access Control Policy and any supplementary inspection policy bound to it is documented and independently verifiable, not inferred from naming convention."</div>
+    <div class="spec-grid">
+      <div class="k">Standards Basis</div><div>PCI DSS v4.0.1 Req 1.1 (network diagrams and configuration standards); NIST SP 800-53 Rev. 5 <code>CM-8</code> (System Component Inventory)</div>
+      <div class="k">Metric</div><div><code>(devices with a documented, confirmed policy binding) &divide; (total CDE devices)</code></div>
+      <div class="k">Target</div><div>100% — no device's governing policy should require inference from hostname or directory structure</div>
+      <div class="k">Measurement</div><div>Annual architecture review, reconciling FMC device-registration records against the policy inventory</div>
+      <div class="k">Owner</div><div>Firewall Engineering / Network Architecture</div>
+    </div>
+    <div class="baseline-box"><strong>Current baseline:</strong> unmet for a specific, material case — whether the "(IPS Only) Las Vegas Voyager" policy binds to the same devices enforcing the five Legacy VLAN policies could not be confirmed from any available export. This function exists specifically to close that class of open question going forward, not just this one instance.</div>
+  </div>
+
+  <h2>Function 8 — Scope Confirmation for CDE-Adjacent Infrastructure</h2>
+  <div class="func-card">
+    <div class="func-head"><span class="func-num">8</span><h3>Every policy hosted on CDE-designated management infrastructure has a documented, explicit CDE-scope determination</h3><span class="status-tag tag-fail">Currently Failing</span></div>
+    <div class="policy-statement">"No policy sits in an undetermined scope state. Every access control policy hosted on a PCI-designated FMC manager is explicitly marked as in-scope or out-of-scope for the CDE, with the determination documented and dated."</div>
+    <div class="spec-grid">
+      <div class="k">Standards Basis</div><div>PCI DSS v4.0.1 Req 12.5.2 (scoping documentation is an explicit, named requirement); NIST SP 800-53 Rev. 5 <code>CA-3</code> (Information Exchange)</div>
+      <div class="k">Metric</div><div><code>(policies with a documented, dated scope determination) &divide; (total policies on PCI-designated managers)</code></div>
+      <div class="k">Target</div><div>100% — zero policies in an undetermined state</div>
+      <div class="k">Measurement</div><div>Annual scope review, owned jointly by the PCI ISA and Network Architecture</div>
+      <div class="k">Owner</div><div>PCI ISA</div>
+    </div>
+    <div class="baseline-box"><strong>Current baseline:</strong> 8 policies, 25,439 rules, hosted on the <code>rricmdc-sec-mgt-prd-pci-01</code> manager have no documented scope determination available — currently 0% against target. Until this function is met, Functions 1&ndash;7 above cannot be fully evaluated for that portion of the estate either.</div>
+  </div>
+
+  <h2>Measurement Cadence Summary</h2>
+  <table>
+    <tr><th style="width:30%">Function</th><th style="width:20%">Frequency</th><th>Escalation if Missed</th></tr>
+    <tr><td>1. Intrusion Prevention Coverage</td><td>Monthly</td><td>PCI ISA notified if any policy drops below 80%</td></tr>
+    <tr><td>2. Ruleset Review &amp; Hygiene</td><td>Quarterly</td><td>Change Advisory Board review if any policy exceeds 180 days since last documented review</td></tr>
+    <tr><td>3. Audit Trail Completeness</td><td>Monthly (fields) / Annual (device verification)</td><td>SOC notified if dual-logging drops below 90% on any policy</td></tr>
+    <tr><td>4. Management-Plane Cryptography</td><td>Per change window / Annual full audit</td><td>Immediate remediation ticket for any SNMPv2c or sub-1.2 TLS finding</td></tr>
+    <tr><td>5. Rule Specificity</td><td>Quarterly</td><td>Firewall Engineering review of any new unscoped rule without a ticket reference</td></tr>
+    <tr><td>6. Rule Documentation</td><td>Annual</td><td>Folded into each policy's Function 2 review cycle</td></tr>
+    <tr><td>7. Policy-to-Device Binding</td><td>Annual</td><td>Network Architecture sign-off required before closure</td></tr>
+    <tr><td>8. CDE Scope Confirmation</td><td>Annual, or on any new policy creation</td><td>PCI ISA sign-off required before a new policy is considered assessed under any other function</td></tr>
+  </table>
+
+  <footer>
+    Companion to the PCI Firewall Implementation Compliance Analysis and the Security Stack Capability-Alignment
+    Roadmap. Standards confirmed current as of this writing: PCI DSS v4.0.1, NIST SP 800-53 Rev. 5, NIST SP 800-41
+    Rev. 1, NIST SP 800-30 Rev. 1. Baselines will drift from the figures cited here as remediation progresses —
+    each function's metric is defined precisely enough to be re-measured directly against the live environment
+    rather than re-derived from this document.
+  </footer>
+
+</div>
+</body>
+</html>
